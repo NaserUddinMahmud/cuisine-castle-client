@@ -18,7 +18,7 @@ const Home = () => {
               Satisfy Your Thai Food Cravings at Home With Original Local
               Recipes.
             </p>
-            <button className="btn btn-primary">Get Started</button>
+            <button className="btn btn-warning">Get Started</button>
           </div>
         </div>
       </div>
@@ -38,7 +38,7 @@ const Home = () => {
             <h2 className="card-title">Shoes!</h2>
             <p>If a dog chews shoes whose shoes does he choose?</p>
             <div className="card-actions justify-end">
-              <button className="btn btn-primary">Buy Now</button>
+              <button className="btn btn-warning">Buy Now</button>
             </div>
           </div>
         </div>
@@ -54,7 +54,7 @@ const Home = () => {
             <h2 className="card-title">Shoes!</h2>
             <p>If a dog chews shoes whose shoes does he choose?</p>
             <div className="card-actions justify-end">
-              <button className="btn btn-primary">Buy Now</button>
+              <button className="btn btn-warning">Buy Now</button>
             </div>
           </div>
         </div>
@@ -70,7 +70,7 @@ const Home = () => {
             <h2 className="card-title">Shoes!</h2>
             <p>If a dog chews shoes whose shoes does he choose?</p>
             <div className="card-actions justify-end">
-              <button className="btn btn-primary">Buy Now</button>
+              <button className="btn btn-warning">Buy Now</button>
             </div>
           </div>
         </div>
@@ -86,7 +86,7 @@ const Home = () => {
             <h2 className="card-title">Shoes!</h2>
             <p>If a dog chews shoes whose shoes does he choose?</p>
             <div className="card-actions justify-end">
-              <button className="btn btn-primary">Buy Now</button>
+              <button className="btn btn-warning">Buy Now</button>
             </div>
           </div>
         </div>
@@ -102,7 +102,7 @@ const Home = () => {
             <h2 className="card-title">Shoes!</h2>
             <p>If a dog chews shoes whose shoes does he choose?</p>
             <div className="card-actions justify-end">
-              <button className="btn btn-primary">Buy Now</button>
+              <button className="btn btn-warning">Buy Now</button>
             </div>
           </div>
         </div>
@@ -118,7 +118,7 @@ const Home = () => {
             <h2 className="card-title">Shoes!</h2>
             <p>If a dog chews shoes whose shoes does he choose?</p>
             <div className="card-actions justify-end">
-              <button className="btn btn-primary">Buy Now</button>
+              <button className="btn btn-warning">Buy Now</button>
             </div>
           </div>
         </div>
