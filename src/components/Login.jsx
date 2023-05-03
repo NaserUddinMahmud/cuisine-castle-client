@@ -5,7 +5,7 @@ import { AuthContext } from './AuthProvider';
 
 const Login = () => {
 
-    const{signIn} = useContext(AuthContext)
+    const{signIn, signInWithGoogle} = useContext(AuthContext)
 
     const handleLogin = event =>{
         event.preventDefault();
@@ -22,6 +22,17 @@ const Login = () => {
         .catch(error =>{
             console.log(error);
         })
+    }
+
+    const handleGoogleSignIn = () =>{
+      signInWithGoogle()
+      .then(result =>{
+        const loggedUser = result.user;
+        console.log(loggedUser);
+    })
+    .catch(error =>{
+        console.log(error);
+    })
     }
 
     return (
@@ -51,7 +62,9 @@ const Login = () => {
         <div className="form-control mt-6">
           <button className="btn btn-warning">Login</button>
         </div>
+        
       </form>
+      <button onClick={handleGoogleSignIn} className="btn btn-outline btn-warning mx-8">Login with Google </button>
       <p className='px-5 pb-10'>New to CuisineCastle? <Link to='/register' className=" btn-link"> Please register!</Link></p>
     </div>
   </div>
