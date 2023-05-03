@@ -24,9 +24,9 @@ const Home = () => {
       </div>
       {/* Chef section */}
 
-      <div className="flex flex-wrap gap-2 mx-auto my-16 justify-center">
+      <h2 className="text-5xl font-semibold text-center mt-12">Our Chefs</h2>
 
-
+      <div className="flex flex-wrap gap-2 mx-auto my-8 justify-center">
         <div className="card w-96 bg-base-100 shadow-xl image-full">
           <figure>
             <img
@@ -122,8 +122,65 @@ const Home = () => {
             </div>
           </div>
         </div>
+      </div>
 
+      {/* Subscription section */}
 
+      <div className="hero min-h-screen bg-base-200 mt-16 py-10">
+        <div className="hero-content flex-col lg:flex-row">
+          <img
+            src="https://images.unsplash.com/photo-1506368249639-73a05d6f6488?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+            className="max-w-sm rounded-lg shadow-2xl"
+          />
+          <div>
+            <h1 className="text-5xl font-bold">Live Cooking Classes Weekly!</h1>
+            <p className="py-6">
+              Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
+              excepturi exercitationem quasi. In deleniti eaque aut repudiandae
+              et a id nisi.
+            </p>
+            <button className="btn btn-warning">Subscribe</button>
+          </div>
+        </div>
+      </div>
+
+      {/* Categories section */}
+
+      <div className="hero min-h-screen" style={{ backgroundImage: `url("https://images.unsplash.com/photo-1507048331197-7d4ac70811cf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80")` }}>
+  <div className="hero-overlay bg-opacity-60"></div>
+  <div className="hero-content text-center text-neutral-content">
+    <div className="max-w-md">
+      <h1 className="mb-5 text-5xl font-bold">Popular Categories</h1>
+      <p className="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+     
+    </div>
+  </div>
+</div>
+
+      <div className="flex justify-center max-w-screen-2xl -mt-32 mb-16">
+        <div className="avatar mx-10">
+          <div className="w-52 rounded-full ring ring-warning ring-offset-base-100 ring-offset-2">
+            <img src="https://images.unsplash.com/photo-1548943487-a2e4e43b4853?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" />
+          </div>
+        </div>
+
+        <div className="avatar mx-10">
+          <div className="w-52 rounded-full ring ring-warning ring-offset-base-100 ring-offset-2">
+            <img src="https://images.unsplash.com/photo-1548943487-a2e4e43b4853?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" />
+          </div>
+        </div>
+
+        <div className="avatar mx-10">
+          <div className="w-52 rounded-full ring ring-warning ring-offset-base-100 ring-offset-2">
+            <img src="https://images.unsplash.com/photo-1548943487-a2e4e43b4853?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" />
+          </div>
+        </div>
+
+        <div className="avatar mx-10">
+          <div className="w-52 rounded-full ring ring-warning ring-offset-base-100 ring-offset-2">
+            <img src="https://images.unsplash.com/photo-1548943487-a2e4e43b4853?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" />
+          </div>
+        </div>
       </div>
     </>
   );

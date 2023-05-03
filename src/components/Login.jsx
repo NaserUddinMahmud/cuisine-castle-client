@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from './AuthProvider';
+import { FaGoogle, FaGithub } from 'react-icons/fa';
 
 
 const Login = () => {
@@ -75,8 +76,8 @@ const Login = () => {
         </div>
         
       </form>
-      <button onClick={handleGoogleSignIn} className="btn btn-outline btn-warning mx-8">Login with Google </button>
-      <button onClick={handleGithubSignIn} className="btn btn-outline btn-warning mx-8">Login with Github </button>
+      <button onClick={handleGoogleSignIn} className="btn btn-outline btn-warning mx-8"> <FaGoogle />  <span className='pl-2'>Login with Google</span></button>
+      <button onClick={handleGithubSignIn} className="btn btn-outline btn-warning mx-8 my-4"><FaGithub/><span className='pl-2'>Login with Github</span></button>
       <p className='px-5 pb-10'>New to CuisineCastle? <Link to='/register' className=" btn-link"> Please register!</Link></p>
     </div>
   </div>
