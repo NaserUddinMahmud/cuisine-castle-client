@@ -59,8 +59,8 @@ const Header = () => {
             </li>
           </ul>
         </div>
-        <a className="btn btn-ghost normal-case text-xl">
-          <img className="h-6" src="../../public/CuisineCastle.svg" alt="" />{" "}
+        <a className="btn btn-ghost normal-case text-2xl font-bold">
+          <img className="h-10" src="../../public/CuisineCastle.svg" alt="" />
           CuisineCastle
         </a>
       </div>
