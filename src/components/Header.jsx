@@ -92,8 +92,13 @@ const Header = () => {
       <div className="navbar-end">
         {user ? (
           <>
-            {" "}
-            <span>{user.email}</span>
+            
+            
+            <div className="avatar tooltip tooltip-left"data-tip={user.displayName}>
+              <div className="w-12 rounded-full">
+                <img src={user.photoURL}/>
+              </div>
+            </div>
             <button onClick={handleLogOut} className="btn btn-xs ml-2">
               logout
             </button>{" "}
