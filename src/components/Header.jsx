@@ -1,8 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "./AuthProvider";
 // import { HiLockClosed } from 'react-icons/fa';
 
 const Header = () => {
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {})
+      .catch((error) => console.error(error));
+  };
+
   return (
     <div className="navbar bg-gray-400">
       <div className="navbar-start">
@@ -28,11 +37,25 @@ const Header = () => {
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
           >
             <li>
-              <NavLink to="/"className={({ isActive }) => (isActive ? "bg-gray-500 text-white" : "")}>Home</NavLink>
+              <NavLink
+                to="/"
+                className={({ isActive }) =>
+                  isActive ? "bg-gray-500 text-white" : ""
+                }
+              >
+                Home
+              </NavLink>
             </li>
 
             <li>
-              <NavLink to="/blog"className={({ isActive }) => (isActive ? "bg-gray-500 text-white" : "")}>Blog</NavLink>
+              <NavLink
+                to="/blog"
+                className={({ isActive }) =>
+                  isActive ? "bg-gray-500 text-white" : ""
+                }
+              >
+                Blog
+              </NavLink>
             </li>
           </ul>
         </div>
@@ -44,14 +67,22 @@ const Header = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li>
-            <NavLink to="/"
-              className={({ isActive }) => (isActive ? "bg-gray-500 text-white border border-amber-400" : "")}>Home</NavLink>
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                isActive ? "bg-gray-500 text-white border border-amber-400" : ""
+              }
+            >
+              Home
+            </NavLink>
           </li>
 
           <li>
             <NavLink
               to="/blog"
-              className={({ isActive }) => (isActive ? "bg-gray-500 text-white border border-amber-400" : "")}
+              className={({ isActive }) =>
+                isActive ? "bg-gray-500 text-white border border-amber-400" : ""
+              }
             >
               Blog
             </NavLink>
@@ -59,7 +90,22 @@ const Header = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <Link to='/login' className="btn btn-outline"> Login</Link>
+        {user ? (
+          <>
+            {" "}
+            <span>{user.email}</span>
+            <button onClick={handleLogOut} className="btn btn-xs ml-2">
+              logout
+            </button>{" "}
+          </>
+        ) : (
+          <>
+            <Link to="/login" className="btn btn-xs ">
+              {" "}
+              Login
+            </Link>
+          </>
+        )}
       </div>
     </div>
   );
