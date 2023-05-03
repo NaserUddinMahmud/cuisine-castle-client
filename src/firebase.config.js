@@ -4,13 +4,15 @@ import { initializeApp } from "firebase/app";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+console.log('environment ver', import.meta.env.VITE_PASS);
+
 const firebaseConfig = {
-  apiKey: "AIzaSyBTxODWwwFTGqCibVdMvmPK4G8Ndthixd8",
-  authDomain: "cuisine-castle.firebaseapp.com",
-  projectId: "cuisine-castle",
-  storageBucket: "cuisine-castle.appspot.com",
-  messagingSenderId: "350869912527",
-  appId: "1:350869912527:web:3d084e90b09f44eb28f0ba"
+  apiKey: import.meta.env.VITE_apiKey,
+  authDomain: import.meta.env.VITE_authDomain,
+  projectId: import.meta.env.VITE_projectId,
+  storageBucket: import.meta.env.VITE_storageBucket,
+  messagingSenderId: import.meta.env.VITE_messagingSenderId,
+  appId: import.meta.env.VITE_appId
 };
 
 // Initialize Firebase

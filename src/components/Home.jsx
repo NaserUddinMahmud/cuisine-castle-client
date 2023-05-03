@@ -157,30 +157,35 @@ const Home = () => {
   </div>
 </div>
 
-      <div className="flex justify-center max-w-screen-2xl -mt-32 mb-16">
-        <div className="avatar mx-10">
-          <div className="w-52 rounded-full ring ring-warning ring-offset-base-100 ring-offset-2">
-            <img src="https://images.unsplash.com/photo-1548943487-a2e4e43b4853?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" />
+      <div className="flex flex-wrap justify-center max-w-screen-2xl -mt-32 mb-16" >
+        
+        <div className=" mx-10 mb-10" >
+          <div className="w-52 h-52 rounded-full ring ring-warning ring-offset-base-100 ring-offset-2 text-2xl text-white flex items-center justify-center" style={{ backgroundImage: `url("https://images.unsplash.com/photo-1540420828642-fca2c5c18abe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1364&q=80")` }}>
+            <p>Desert</p>
           </div>
         </div>
 
-        <div className="avatar mx-10">
-          <div className="w-52 rounded-full ring ring-warning ring-offset-base-100 ring-offset-2">
-            <img src="https://images.unsplash.com/photo-1548943487-a2e4e43b4853?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" />
+        <div className=" mx-10 mb-10" >
+          <div className="w-52 h-52 rounded-full ring ring-warning ring-offset-base-100 ring-offset-2 text-2xl text-white flex items-center justify-center" style={{ backgroundImage: `url("https://images.unsplash.com/photo-1540420828642-fca2c5c18abe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1364&q=80")` }}>
+            <p>Desert</p>
           </div>
         </div>
 
-        <div className="avatar mx-10">
-          <div className="w-52 rounded-full ring ring-warning ring-offset-base-100 ring-offset-2">
-            <img src="https://images.unsplash.com/photo-1548943487-a2e4e43b4853?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" />
+        <div className=" mx-10 mb-10" >
+          <div className="w-52 h-52 rounded-full ring ring-warning ring-offset-base-100 ring-offset-2 text-2xl text-white flex items-center justify-center" style={{ backgroundImage: `url("https://images.unsplash.com/photo-1540420828642-fca2c5c18abe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1364&q=80")` }}>
+            <p>Desert</p>
           </div>
         </div>
 
-        <div className="avatar mx-10">
-          <div className="w-52 rounded-full ring ring-warning ring-offset-base-100 ring-offset-2">
-            <img src="https://images.unsplash.com/photo-1548943487-a2e4e43b4853?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" />
+        <button className=" mx-10 mb-10" >
+          <div className="w-52 h-52 rounded-full ring ring-warning ring-offset-base-100 ring-offset-2 text-2xl text-white flex items-center justify-center" style={{ backgroundImage: `url("https://images.unsplash.com/photo-1540420828642-fca2c5c18abe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1364&q=80")` }}>
+            <p>Desert</p>
           </div>
-        </div>
+        </button>
+
+       
+
+        
       </div>
     </>
   );
