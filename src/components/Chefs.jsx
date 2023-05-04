@@ -21,7 +21,7 @@ const Chefs = ({ chef }) => {
           <p>Recipes: {recipeCount}</p>
           <p>Likes: {likes}</p>
           <div className="card-actions justify-end">
-            <button onClick={()=>navigate(`/chef-recipes/${id}`)}  className="btn btn-warning">View Recipes</button>
+            <button onClick={()=>navigate(`/chefrecipes/${id}`)}  className="btn btn-warning">View Recipes</button>
           </div>
         </div>
       </div>
