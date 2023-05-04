@@ -1,6 +1,16 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import Chefs from "./chefs";
 
 const Home = () => {
+  const [chefs, setChefs] = useState([]);
+
+  useEffect(()=>{
+    fetch('http://localhost:5000/chefs')
+    .then(res => res.json())
+    .then(data => setChefs(data))
+    .catch(error => console.error(error))
+  }, [])
+console.log(chefs);
   return (
     <>
       {/* Banner Section */}
@@ -24,105 +34,19 @@ const Home = () => {
       </div>
       {/* Chef section */}
 
+
       <h2 className="text-5xl font-semibold text-center mt-12">Our Chefs</h2>
 
-      <div className="flex flex-wrap gap-2 mx-auto my-8 justify-center">
-        <div className="card w-96 bg-base-100 shadow-xl image-full">
-          <figure>
-            <img
-              src="https://prod-media-eng.dhakatribune.com/uploads/2019/11/amari-dhaka-1573659760958.jpg"
-              alt="Shoes"
-            />
-          </figure>
-          <div className="card-body">
-            <h2 className="card-title">Shoes!</h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div className="card-actions justify-end">
-              <button className="btn btn-warning">Buy Now</button>
-            </div>
-          </div>
-        </div>
+     <div className="flex flex-wrap gap-2 mx-auto my-8 justify-center">
+     {
+        chefs.map(chef =><Chefs
+        key={chef.id}
+        chef={chef}
+        ></Chefs>)
+      }
+     </div>
 
-        <div className="card w-96 bg-base-100 shadow-xl image-full">
-          <figure>
-            <img
-              src="https://prod-media-eng.dhakatribune.com/uploads/2019/11/amari-dhaka-1573659760958.jpg"
-              alt="Shoes"
-            />
-          </figure>
-          <div className="card-body">
-            <h2 className="card-title">Shoes!</h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div className="card-actions justify-end">
-              <button className="btn btn-warning">Buy Now</button>
-            </div>
-          </div>
-        </div>
-
-        <div className="card w-96 bg-base-100 shadow-xl image-full">
-          <figure>
-            <img
-              src="https://prod-media-eng.dhakatribune.com/uploads/2019/11/amari-dhaka-1573659760958.jpg"
-              alt="Shoes"
-            />
-          </figure>
-          <div className="card-body">
-            <h2 className="card-title">Shoes!</h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div className="card-actions justify-end">
-              <button className="btn btn-warning">Buy Now</button>
-            </div>
-          </div>
-        </div>
-
-        <div className="card w-96 bg-base-100 shadow-xl image-full">
-          <figure>
-            <img
-              src="https://prod-media-eng.dhakatribune.com/uploads/2019/11/amari-dhaka-1573659760958.jpg"
-              alt="Shoes"
-            />
-          </figure>
-          <div className="card-body">
-            <h2 className="card-title">Shoes!</h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div className="card-actions justify-end">
-              <button className="btn btn-warning">Buy Now</button>
-            </div>
-          </div>
-        </div>
-
-        <div className="card w-96 bg-base-100 shadow-xl image-full">
-          <figure>
-            <img
-              src="https://prod-media-eng.dhakatribune.com/uploads/2019/11/amari-dhaka-1573659760958.jpg"
-              alt="Shoes"
-            />
-          </figure>
-          <div className="card-body">
-            <h2 className="card-title">Shoes!</h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div className="card-actions justify-end">
-              <button className="btn btn-warning">Buy Now</button>
-            </div>
-          </div>
-        </div>
-
-        <div className="card w-96 bg-base-100 shadow-xl image-full">
-          <figure>
-            <img
-              src="https://prod-media-eng.dhakatribune.com/uploads/2019/11/amari-dhaka-1573659760958.jpg"
-              alt="Shoes"
-            />
-          </figure>
-          <div className="card-body">
-            <h2 className="card-title">Shoes!</h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div className="card-actions justify-end">
-              <button className="btn btn-warning">Buy Now</button>
-            </div>
-          </div>
-        </div>
-      </div>
+      
 
       {/* Subscription section */}
 
@@ -160,26 +84,27 @@ const Home = () => {
       <div className="flex flex-wrap justify-center max-w-screen-2xl -mt-32 mb-16" >
         
         <div className=" mx-10 mb-10" >
-          <div className="w-52 h-52 rounded-full ring ring-warning ring-offset-base-100 ring-offset-2 text-2xl text-white flex items-center justify-center" style={{ backgroundImage: `url("https://images.unsplash.com/photo-1540420828642-fca2c5c18abe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1364&q=80")` }}>
-            <p>Desert</p>
+          <div className="w-52 h-52 rounded-full ring ring-warning ring-offset-base-100 ring-offset-2 text-2xl text-white flex items-center justify-center" style={{ backgroundImage: `url("https://images.unsplash.com/photo-1580554530778-ca36943938b2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80")` }}>
+            <p>Main Dish</p>
           </div>
         </div>
 
         <div className=" mx-10 mb-10" >
-          <div className="w-52 h-52 rounded-full ring ring-warning ring-offset-base-100 ring-offset-2 text-2xl text-white flex items-center justify-center" style={{ backgroundImage: `url("https://images.unsplash.com/photo-1540420828642-fca2c5c18abe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1364&q=80")` }}>
-            <p>Desert</p>
+          <div className="w-52 h-52 rounded-full ring ring-warning ring-offset-base-100 ring-offset-2 text-2xl text-white flex items-center justify-center" style={{ backgroundImage: `url("https://images.unsplash.com/photo-1527751171053-6ac5ec50000b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80")` }}>
+            <p>Appetizers</p>
           </div>
         </div>
 
         <div className=" mx-10 mb-10" >
-          <div className="w-52 h-52 rounded-full ring ring-warning ring-offset-base-100 ring-offset-2 text-2xl text-white flex items-center justify-center" style={{ backgroundImage: `url("https://images.unsplash.com/photo-1540420828642-fca2c5c18abe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1364&q=80")` }}>
-            <p>Desert</p>
+          <div className="w-52 h-52 rounded-full ring ring-warning ring-offset-base-100 ring-offset-2 text-2xl text-white flex items-center justify-center" style={{ backgroundImage: `url("https://images.unsplash.com/photo-1527661591475-527312dd65f5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=415&q=80")` }}>
+            <p>Drink Recipes
+</p>
           </div>
         </div>
 
         <button className=" mx-10 mb-10" >
-          <div className="w-52 h-52 rounded-full ring ring-warning ring-offset-base-100 ring-offset-2 text-2xl text-white flex items-center justify-center" style={{ backgroundImage: `url("https://images.unsplash.com/photo-1540420828642-fca2c5c18abe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1364&q=80")` }}>
-            <p>Desert</p>
+          <div className="w-52 h-52 rounded-full ring ring-warning ring-offset-base-100 ring-offset-2 text-2xl text-white flex items-center justify-center" style={{ backgroundImage: `url("https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80")` }}>
+            <p>Breakfast</p>
           </div>
         </button>
 

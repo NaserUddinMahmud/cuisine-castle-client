@@ -12,7 +12,7 @@ const Footer = () => {
     
   </div>
   <h3 className="text-2xl font-bold">
-          <img className="h-10" src="../../public/CuisineCastle.svg" alt="" />
+          <img className="h-10" src="https://i.ibb.co/CBtmL7W/Cuisine-Castle.png" alt="" />
           CuisineCastle
         </h3> 
   <div>

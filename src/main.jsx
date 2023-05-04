@@ -12,6 +12,7 @@ import Login from './components/Login';
 import Register from './components/Register';
 import AuthProvider from './components/AuthProvider';
 import ErrorPage from './components/ErrorPage';
+import ChefRecipes from './components/ChefRecipes';
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,11 @@ const router = createBrowserRouter([
       {
         path:'/register',
         element:<Register></Register>
+      },
+      {
+        path: '/chef-recipes/:id',
+        element: <ChefRecipes></ChefRecipes>,
+        loader: ({params}) => fetch(`http://localhost:5000/chefs/${params.id}`)
       }
     ]
   },

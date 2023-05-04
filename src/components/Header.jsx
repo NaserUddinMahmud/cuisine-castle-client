@@ -60,7 +60,7 @@ const Header = () => {
           </ul>
         </div>
         <a className="btn btn-ghost normal-case text-2xl font-bold">
-          <img className="h-10" src="../../public/CuisineCastle.svg" alt="" />
+          <img className="h-10" src="https://i.ibb.co/CBtmL7W/Cuisine-Castle.png.svg" alt="" />
           CuisineCastle
         </a>
       </div>
@@ -96,7 +96,8 @@ const Header = () => {
               <div className="w-12 rounded-full">
               {user.photoURL?
              <><img src={user.photoURL}/></> 
-            : <><img src='../../public/abstract-user-flat-1.svg'/></>
+            : <><img src='
+            https://i.ibb.co/gt2zhwX/abstract-user-flat-1.png'/></>
 
             }
               </div>
