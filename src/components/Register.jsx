@@ -1,10 +1,13 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from './AuthProvider';
+import toast, { Toaster } from 'react-hot-toast';
 
+const notify = () => toast.success('Registration Successful!');
 const Register = () => {
-
-    const {user, createUser} = useContext(AuthContext)
+  const [error, setError] = useState('');
+  
+    const { createUser} = useContext(AuthContext)
 
     console.log(createUser);
     const handleRegister = event => {
@@ -15,16 +18,27 @@ const Register = () => {
         const password = form.password.value;
         const photo = form.photo.value;
         console.log(name,email, password, photo);
+        setError('');
+        if(password.length < 6){
+          setError('Password must be 6 characters or longer');
+          return
+        }
         createUser(email,password)
         .then(result =>{
             const loggedUser = result.user;
             console.log(loggedUser);
             form.reset();
+            
+            notify();
+            
         })
         .catch(error =>{
             console.log(error);
+            setError(error.message);
         })
     } 
+
+    
 
     return (
         <div className="hero min-h-screen bg-base-200">
@@ -68,8 +82,10 @@ const Register = () => {
 
         <div className="form-control mt-6">
           <button className="btn btn-warning">Register</button>
+          <Toaster />
         </div>
       </form>
+      <p className='text-red-600 px-5'>{error}</p>
       <p className='px-5 pb-10'>Already have an account? <Link to='/login' className=" btn-link"> Please login!</Link></p>
     </div>
   </div>

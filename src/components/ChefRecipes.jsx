@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import Recipe from "./Recipe";
+import LazyLoad from 'react-lazy-load';
 
 const ChefRecipes = () => {
   const chefDetails = useLoaderData();
@@ -18,10 +19,14 @@ const ChefRecipes = () => {
     <div>
       <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col lg:flex-row-reverse">
+        <div>
+        <LazyLoad   height={200}>
           <img
             src={profilePicture}
             className="max-w-sm rounded-lg shadow-2xl"
           />
+          </LazyLoad>
+        </div>
           <div>
             <h1 className="text-5xl font-bold">{name}</h1>
             <p className="py-6">{bio}</p>

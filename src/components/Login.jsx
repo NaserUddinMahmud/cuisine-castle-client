@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from './AuthProvider';
 import { FaGoogle, FaGithub } from 'react-icons/fa';
@@ -7,6 +7,8 @@ import { FaGoogle, FaGithub } from 'react-icons/fa';
 const Login = () => {
 
     const{signIn, signInWithGoogle, signInWithGithub} = useContext(AuthContext)
+
+    const [error, setError] = useState('');
 
     const navigate = useNavigate();
     const location = useLocation();
@@ -24,10 +26,12 @@ const Login = () => {
         .then(result =>{
             const loggedUser = result.user;
             console.log(loggedUser);
-            navigate(from, {replace:true})
+            setError('');
+            navigate(from, {replace:true});
         })
         .catch(error =>{
             console.log(error);
+            setError(error.message);
         })
     }
 
@@ -84,8 +88,10 @@ const Login = () => {
         </div>
         
       </form>
+      
       <button onClick={handleGoogleSignIn} className="btn btn-outline btn-warning mx-8"> <FaGoogle />  <span className='pl-2'>Login with Google</span></button>
       <button onClick={handleGithubSignIn} className="btn btn-outline btn-warning mx-8 my-4"><FaGithub/><span className='pl-2'>Login with Github</span></button>
+      <p className='text-red-600 px-5'>{error}</p>
       <p className='px-5 pb-10'>New to CuisineCastle? <Link to='/register' className=" btn-link"> Please register!</Link></p>
     </div>
   </div>
