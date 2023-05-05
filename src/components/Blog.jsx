@@ -3,6 +3,9 @@ import React from "react";
 const Blog = () => {
   return (
     <div className="text-justify">
+      <div className="mt-10 flex justify-center">
+      <button className="btn btn-outline btn-warning">download</button>
+      </div>
       <div className="px-8 py-3">
         <h2 className="text-2xl font-medium mt-5">
           1. Tell us the differences between uncontrolled and controlled components.

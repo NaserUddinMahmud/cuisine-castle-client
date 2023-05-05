@@ -2,12 +2,13 @@ import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from './AuthProvider';
 import toast, { Toaster } from 'react-hot-toast';
+import { updateProfile } from 'firebase/auth';
 
 const notify = () => toast.success('Registration Successful!');
 const Register = () => {
   const [error, setError] = useState('');
   
-    const { createUser} = useContext(AuthContext)
+    const {user, createUser} = useContext(AuthContext)
 
     console.log(createUser);
     const handleRegister = event => {
@@ -28,7 +29,7 @@ const Register = () => {
             const loggedUser = result.user;
             console.log(loggedUser);
             form.reset();
-            
+            updateUserData(result.user, name,photo);
             notify();
             
         })
@@ -38,6 +39,17 @@ const Register = () => {
         })
     } 
 
+    const updateUserData = (user, name, photo) =>{
+      updateProfile(user,{
+        displayName: name , photoURL: photo
+      })
+      .then(() =>{
+        console.log('user profile updated')
+      })
+      .catch(error=>{
+        setError(error.message)
+      })
+    }
     
 
     return (
@@ -68,16 +80,14 @@ const Register = () => {
           </label>
           <input type="password" name='password' placeholder="password" className="input input-bordered" required/>
           
-          <label className="label">
-            <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-          </label>
+          
           
         </div>
         <div className="form-control">
           <label className="label">
             <span className="label-text">Photo URL</span>
           </label>
-          <input type="file" name='photo' className="file-input file-input-warning file-input-bordered w-full max-w-xs" />
+          <input type="text" name='photo' className="file-input file-input-warning file-input-bordered w-full max-w-xs px-5" />
         </div>
 
         <div className="form-control mt-6">
