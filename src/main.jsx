@@ -13,6 +13,7 @@ import Register from './components/Register';
 import AuthProvider from './components/AuthProvider';
 import ErrorPage from './components/ErrorPage';
 import ChefRecipes from './components/ChefRecipes';
+import PrivateRoute from './components/PrivateRoute';
 
 const router = createBrowserRouter([
   {
@@ -38,7 +39,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/chefrecipes/:id',
-        element: <ChefRecipes></ChefRecipes>,
+        element: <PrivateRoute><ChefRecipes></ChefRecipes></PrivateRoute>,
         loader: ({params}) => fetch(`https://assignment-10-cuisine-castle-server-naseruddinmahmud.vercel.app/chefs/${params.id}`)
       }
     ]
