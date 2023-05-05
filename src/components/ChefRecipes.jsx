@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import Recipe from "./Recipe";
 
@@ -10,6 +10,10 @@ const ChefRecipes = () => {
     console.log(recipes);
   const { id } = useParams();
 
+  const [isLoading, setIsLoading] = useState(true);
+  useEffect(()=>{
+    setIsLoading(false);
+  },[])
   return (
     <div>
       <div className="hero min-h-screen bg-base-200">
@@ -31,10 +35,14 @@ const ChefRecipes = () => {
 
       <h2 className="text-4xl font-semibold text-center mt-12">Recipes</h2>
 
+      <div>
+      {isLoading ? <progress className="progress w-56"></progress> : 
+
       <div className="flex flex-wrap gap-2 mx-auto my-8 justify-center">
       {recipes.map(recipe=><Recipe
       key={recipe.id}
       recipe={recipe}></Recipe>)}
+      </div>}
       </div>
     </div>
   );

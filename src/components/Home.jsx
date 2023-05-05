@@ -3,12 +3,14 @@ import Chefs from "./chefs";
 
 const Home = () => {
   const [chefs, setChefs] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(()=>{
     fetch('https://assignment-10-cuisine-castle-server-naseruddinmahmud.vercel.app/chefs')
     .then(res => res.json())
     .then(data => setChefs(data))
     .catch(error => console.error(error))
+    setIsLoading(false);
   }, [])
 console.log(chefs);
   return (
@@ -37,13 +39,14 @@ console.log(chefs);
 
       <h2 className="text-5xl font-semibold text-center mt-12">Our Chefs</h2>
 
-     <div className="flex flex-wrap gap-2 mx-auto my-8 justify-center">
-     {
+     <div>
+     {isLoading ? <progress className="progress w-56"></progress> : <div className="flex flex-wrap gap-2 mx-auto my-8 justify-center">{
         chefs.map(chef =><Chefs
         key={chef.id}
         chef={chef}
         ></Chefs>)
-      }
+      }</div>}
+     
      </div>
 
       
